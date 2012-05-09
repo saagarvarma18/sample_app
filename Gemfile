@@ -10,6 +10,7 @@ gem 'sqlite3'
 gem "rspec-rails", :group => [:test, :development]
 
 gem "webrat", :group => [:test, :development]
+#gem "annotate-models", :group => [:development]
 gem 'spork-rails'
 
 # Gems used only for assets and not required
