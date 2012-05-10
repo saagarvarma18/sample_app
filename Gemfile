@@ -6,8 +6,10 @@ gem 'rails', '3.2.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'gravatar_image_tag'
 
 gem "rspec-rails", :group => [:test, :development]
+gem "factory_girl_rails", :group => [:test]
 
 gem "webrat", :group => [:test, :development]
 #gem "annotate-models", :group => [:development]
