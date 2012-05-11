@@ -14,6 +14,8 @@ gem "factory_girl_rails", :group => [:test]
 gem "webrat", :group => [:test, :development]
 #gem "annotate-models", :group => [:development]
 gem 'spork-rails'
+gem 'faker'
+gem 'will_paginate'
 
 # Gems used only for assets and not required
 # in production environments by default.
