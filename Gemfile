@@ -16,7 +16,7 @@ gem "webrat", :group => [:test, :development]
 gem 'spork-rails'
 gem 'faker'
 gem 'will_paginate'
-
+gem 'mail'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

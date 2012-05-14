@@ -140,6 +140,7 @@ DEPENDENCIES
   faker
   gravatar_image_tag
   jquery-rails
+  mail
   rails (= 3.2.3)
   rspec-rails
   sass-rails (~> 3.2.3)
