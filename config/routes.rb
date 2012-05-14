@@ -1,8 +1,11 @@
 SampleApp::Application.routes.draw do
   
+  
+
    resources :users
    resources :sessions, :only => [:new, :create, :destroy]
    resources :microposts, :only => [:create, :destroy]
+   resources :password_resets
 
 
   root :to => 'pages#home'

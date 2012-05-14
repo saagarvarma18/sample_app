@@ -30,6 +30,16 @@ class User < ActiveRecord::Base
     Micropost.where("user_id = ?",id)
   end
 
+   def send_password_reset
+    self.password_reset_token = Digest::SHA2.hexdigest("#{self.email}#{Time.now}")
+    self.password_reset_sent_at = Time.zone.now
+    @arbid=Digest::SHA2.hexdigest("abcdef")
+    #self.password= @arbid[0,37]
+    #self.password_confirmation= @arbid[0,37]#self.password_confirmation=Digest::SHA2.hexdigest("abcdef")
+    save!
+    UserPassMailer.password_reset(self).deliver
+  end
+
   class << self
       def authenticate(email, submitted_password)
         user=find_by_email(email)
