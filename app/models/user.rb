@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
 
-	attr_accessor :password
+	attr_accessor :password, :skip_callback
 
-  attr_accessible :email, :name, :password, :password_confirmation
+  attr_accessible :email, :name, :password, :password_confirmation, :password_reset_token, :password_reset_sent_at
 
   has_many :microposts, :dependent => :destroy
 
@@ -33,9 +33,10 @@ class User < ActiveRecord::Base
    def send_password_reset
     self.password_reset_token = Digest::SHA2.hexdigest("#{self.email}#{Time.now}")
     self.password_reset_sent_at = Time.zone.now
+    self.skip_callback = true
     @arbid=Digest::SHA2.hexdigest("abcdef")
     self.password= @arbid[0,37]
-    self.password_confirmation= @arbid[0,37]#self.password_confirmation=Digest::SHA2.hexdigest("abcdef")
+    self.password_confirmation= @arbid[0,37]
     save!
     UserPassMailer.password_reset(self).deliver
   end
@@ -57,6 +58,7 @@ class User < ActiveRecord::Base
   private
 
   	def encrypt_password
+      return if self.skip_callback
       self.salt = make_salt if new_record?
       self.encrypted_password = encrypt(password)
     end

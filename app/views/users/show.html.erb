@@ -4,8 +4,11 @@
 			<h1>
 			<%= gravatar_for @user %>
 			<%= @user.name %>
+
 			</h1>
+			<%= link_to "Post an Update", root_path %>
 			<% if @user.microposts.any? %>
+			
 			<table class="microposts" summary= "User microposts">
 				<%= render @microposts %>
 			</table>	

@@ -31,6 +31,11 @@ end
 
 gem 'jquery-rails'
 
+ 
+ #gem 'linecache19', :path => "~/.rvm/gems/ruby-1.9.3-p194/gems/linecache19-0.5.12/"
+  #gem 'ruby-debug-base19', :path => "~/.rvm/gems/ruby-1.9.3-p194/gems/ruby-debug-base19-0.11.25/"
+  #gem 'ruby-debug19', :require => 'ruby-debug'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -42,9 +47,9 @@ gem 'jquery-rails'
 
 # Deploy with Capistrano
 # gem 'capistrano'
-
+#gem 'ruby-debug'
 # To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+#gem 'ruby-debug19', :require => 'ruby-debug'
 #group :test do
 #  gem 'rspec-rails','2.0.0.beta18'
 #end 
